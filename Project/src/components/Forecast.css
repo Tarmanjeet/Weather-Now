@@ -1,0 +1,101 @@
+.forecast {
+  margin-bottom: 20px;
+}
+
+.forecast h3 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;  /* Slightly smaller */
+  color: #1a1a1a;  /* Darker, clearer text */
+  text-align: center;
+}
+
+.forecast-items {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding-bottom: 8px;
+}
+
+.forecast-item {
+  flex: 0 0 auto;
+  background-color: white;  /* Solid white background */
+  border: 1px solid #eee;  /* Light border instead of shadow */
+  border-radius: 8px;  /* Reduced border radius */
+  padding: 12px;
+  min-width: 110px;  /* Slightly smaller */
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.forecast-item:hover {
+  transform: translateY(-3px);  /* Subtler hover effect */
+  border-color: #4a90e2;  /* Highlight border on hover */
+}
+
+.forecast-day {
+  margin-bottom: 6px;
+}
+
+.day-name {
+  font-weight: 600;  /* Slightly less bold */
+  font-size: 1rem;
+  color: #1a1a1a;
+}
+
+.day-date {
+  font-size: 0.8rem;
+  color: #666;  /* Lighter gray */
+}
+
+.forecast-icon {
+  width: 45px;  /* Slightly smaller */
+  height: 45px;
+  margin: 4px auto;
+}
+
+.forecast-temp {
+  font-size: 1.3rem;  /* Slightly smaller */
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #4a90e2;  /* Accent color for temperature */
+}
+
+.forecast-desc {
+  font-size: 0.85rem;
+  color: #666;
+  text-transform: capitalize;
+}
+
+/* Simplified scrollbar */
+.forecast-items::-webkit-scrollbar {
+  height: 4px;
+}
+
+.forecast-items::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+.forecast-items::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 4px;
+}
+
+.forecast-items::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+}
+
+@media (max-width: 600px) {
+  .forecast-item {
+    min-width: 95px;
+    padding: 8px;
+  }
+  
+  .day-name {
+    font-size: 0.9rem;
+  }
+  
+  .forecast-temp {
+    font-size: 1.1rem;
+  }
+}

@@ -1,0 +1,31 @@
+
+.weather-history {
+  margin-top: 30px;
+}
+
+.weather-history h3 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: #2c3e50;
+}
+
+.history-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.history-list li {
+  background-color: #f1f1f1;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.history-list li:hover {
+  background-color: #3498db;
+  color: white;
+}
