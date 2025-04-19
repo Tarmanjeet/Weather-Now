@@ -1,5 +1,3 @@
-
-// src/components/WeatherDisplay.js
 import React from 'react';
 import './WeatherDisplay.css';
 
@@ -26,17 +24,14 @@ function WeatherDisplay({ data, units }) {
     minute: '2-digit'
   });
 
-  // Format temperature as whole number
   const formatTemp = (temp) => Math.round(temp);
   
-  // Format wind speed with unit
   const formatWind = (speed) => {
     return units === 'metric' 
       ? `${speed} m/s` 
       : `${speed} mph`;
   };
 
-  // Get the appropriate background class based on weather condition
   const getWeatherClass = () => {
     const weatherId = weather[0].id;
     

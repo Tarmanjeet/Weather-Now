@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState, useEffect } from 'react';
 import SearchBar from './components/SearchBar';
 import WeatherDisplay from './components/WeatherDisplay';
@@ -8,7 +7,6 @@ import Loading from './components/Loading';
 import WeatherHistory from './components/WeatherHistory';
 import './App.css';
 
-// OpenWeatherMap API key - replace with your own
 const API_KEY = "d6fd7ab3a788070c41919a06b97360ea";
 const BASE_URL = "https://api.openweathermap.org/data/2.5";
 
@@ -18,9 +16,8 @@ function App() {
   const [searchHistory, setSearchHistory] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [units, setUnits] = useState('metric'); // 'metric' for Celsius, 'imperial' for Fahrenheit
+  const [units, setUnits] = useState('metric'); 
 
-  // Load user's location on first visit
   useEffect(() => {
     if (navigator.geolocation) {
       setLoading(true);
@@ -32,15 +29,14 @@ function App() {
         err => {
           console.error(err);
           setLoading(false);
-          fetchWeatherByCity('Delhi'); // Default city if geolocation fails
+          fetchWeatherByCity('Delhi'); 
         }
       );
     } else {
-      fetchWeatherByCity('Delhi'); // Default city if geolocation not supported
+      fetchWeatherByCity('Delhi'); 
     }
   }, []);
 
-  // Load search history from localStorage
   useEffect(() => {
     const history = localStorage.getItem('weatherSearchHistory');
     if (history) {
@@ -48,7 +44,6 @@ function App() {
     }
   }, []);
 
-  // Save search history to localStorage
   useEffect(() => {
     localStorage.setItem('weatherSearchHistory', JSON.stringify(searchHistory));
   }, [searchHistory]);
@@ -60,8 +55,7 @@ function App() {
     setError(null);
     
     try {
-      // Fetch current weather
-      const weatherResponse = await fetch(
+        const weatherResponse = await fetch(
         `${BASE_URL}/weather?q=${city}&units=${units}&appid=${API_KEY}`
       );
       
@@ -72,10 +66,8 @@ function App() {
       const weatherData = await weatherResponse.json();
       setWeatherData(weatherData);
       
-      // Add to search history
       updateSearchHistory(city);
       
-      // Fetch 5-day forecast
       const forecastResponse = await fetch(
         `${BASE_URL}/forecast?q=${city}&units=${units}&appid=${API_KEY}`
       );
@@ -99,7 +91,6 @@ function App() {
     setError(null);
     
     try {
-      // Fetch current weather
       const weatherResponse = await fetch(
         `${BASE_URL}/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${API_KEY}`
       );
@@ -111,10 +102,8 @@ function App() {
       const weatherData = await weatherResponse.json();
       setWeatherData(weatherData);
       
-      // Add to search history
       updateSearchHistory(weatherData.name);
       
-      // Fetch 5-day forecast
       const forecastResponse = await fetch(
         `${BASE_URL}/forecast?lat=${lat}&lon=${lon}&units=${units}&appid=${API_KEY}`
       );
@@ -134,9 +123,7 @@ function App() {
   };
 
   const updateSearchHistory = (city) => {
-    // Prevent duplicates in history
     if (!searchHistory.includes(city)) {
-      // Keep only the last 5 searches
       const updatedHistory = [city, ...searchHistory].slice(0, 5);
       setSearchHistory(updatedHistory);
     }

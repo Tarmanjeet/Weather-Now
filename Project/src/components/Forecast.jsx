@@ -1,41 +1,34 @@
-// src/components/Forecast.js
 import React from 'react';
 import './Forecast.css';
 
 function Forecast({ data, units }) {
   if (!data || !data.list) return null;
 
-  // Process forecast data to get one forecast per day
   const getDailyForecasts = () => {
     const forecasts = data.list;
     const dailyData = [];
     const dates = {};
     
-    // Get one forecast for each day (at around noon)
     forecasts.forEach(forecast => {
       const date = new Date(forecast.dt * 1000).toLocaleDateString();
       const hour = new Date(forecast.dt * 1000).getHours();
       
-      // For first day, use next available forecast
       if (!dates[date]) {
         dates[date] = true;
         dailyData.push(forecast);
       } 
-      // For subsequent days, prefer forecasts around noon
       else if (hour >= 11 && hour <= 13 && dates[date] === true) {
-        // Replace the existing forecast for this day
         const index = dailyData.findIndex(item => 
           new Date(item.dt * 1000).toLocaleDateString() === date
         );
         
         if (index !== -1) {
           dailyData[index] = forecast;
-          dates[date] = false; // Mark as filled with noon data
+          dates[date] = false; 
         }
       }
     });
     
-    // Limit to 5 days
     return dailyData.slice(0, 5);
   };
 

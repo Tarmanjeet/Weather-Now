@@ -1,4 +1,3 @@
-// src/components/WeatherHistory.js
 import React from 'react';
 import './WeatherHistory.css';
 

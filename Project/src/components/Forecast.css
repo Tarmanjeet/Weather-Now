@@ -4,8 +4,8 @@
 
 .forecast h3 {
   margin-bottom: 15px;
-  font-size: 1.3rem;  /* Slightly smaller */
-  color: #1a1a1a;  /* Darker, clearer text */
+  font-size: 1.3rem;  
+  color: #1a1a1a;  
   text-align: center;
 }
 
@@ -18,18 +18,18 @@
 
 .forecast-item {
   flex: 0 0 auto;
-  background-color: white;  /* Solid white background */
-  border: 1px solid #eee;  /* Light border instead of shadow */
-  border-radius: 8px;  /* Reduced border radius */
+  background-color: white;  
+  border: 1px solid #eee;  
+  border-radius: 8px;  
   padding: 12px;
-  min-width: 110px;  /* Slightly smaller */
+  min-width: 110px;  
   text-align: center;
   transition: all 0.2s ease;
 }
 
 .forecast-item:hover {
-  transform: translateY(-3px);  /* Subtler hover effect */
-  border-color: #4a90e2;  /* Highlight border on hover */
+  transform: translateY(-3px);  
+  border-color: #4a90e2;  
 }
 
 .forecast-day {
@@ -37,27 +37,27 @@
 }
 
 .day-name {
-  font-weight: 600;  /* Slightly less bold */
+  font-weight: 600;  
   font-size: 1rem;
   color: #1a1a1a;
 }
 
 .day-date {
   font-size: 0.8rem;
-  color: #666;  /* Lighter gray */
+  color: #666;  
 }
 
 .forecast-icon {
-  width: 45px;  /* Slightly smaller */
+  width: 45px;  
   height: 45px;
   margin: 4px auto;
 }
 
 .forecast-temp {
-  font-size: 1.3rem;  /* Slightly smaller */
+  font-size: 1.3rem;  
   font-weight: 600;
   margin-bottom: 4px;
-  color: #4a90e2;  /* Accent color for temperature */
+  color: #4a90e2;  
 }
 
 .forecast-desc {
@@ -66,7 +66,6 @@
   text-transform: capitalize;
 }
 
-/* Simplified scrollbar */
 .forecast-items::-webkit-scrollbar {
   height: 4px;
 }

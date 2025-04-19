@@ -7,12 +7,12 @@
 }
 
 .loading-spinner {
-  width: 40px;  /* Slightly smaller spinner */
+  width: 40px;  
   height: 40px;
-  border: 3px solid #f0f0f0;  /* Lighter border color */
+  border: 3px solid #f0f0f0; 
   border-radius: 50%;
-  border-top-color: #4a90e2;  /* Matching the app's accent color */
-  animation: spin 0.8s linear infinite;  /* Slightly faster, linear animation */
+  border-top-color: #4a90e2;  
+  animation: spin 0.8s linear infinite;  
   margin-bottom: 12px;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .loading-container p {
-  color: #666;  /* Darker, more readable text */
+  color: #666;  
   font-size: 0.9rem;
-  font-weight: 500;  /* Slightly bolder text */
+  font-weight: 500;  
 }
